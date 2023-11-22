@@ -1,6 +1,6 @@
 #include "sort.h"
 
-
+void swap(listint_t **head, listint_t *node1, listint_t *node2);
 /**
  * insertion_sort_list - function that sorts a doubly linked
  * list of integers in ascending order using the Insertion sort algorithm
@@ -12,9 +12,9 @@
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *forw, *insert, *tmp:
+	listint_t *forw, *insert, *tmp;
 
-	if (list == NULL || *list == NULL || (*list)->next ==NULL)
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 
 	for (forw = (*list)->next; forw != NULL; forw = tmp)
@@ -23,7 +23,7 @@ void insertion_sort_list(listint_t **list)
 		insert = forw->prev;
 		while (insert != NULL && forw->n < insert->n)
 		{
-			swap(list, & insert, forw);
+			swap(list, &insert, forw);
 			print_list((const listint_t *)*list);
 		}
 	}
